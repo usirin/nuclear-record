@@ -16,7 +16,7 @@ const Counter = createRecord({
   count: 0
 }, 'Counter')
 
-const counter = Counter(reactor)
+const counter = Counter(new Reactor)
 
 // increment
 counter.actions.set(counter.getters.count() + 1)
