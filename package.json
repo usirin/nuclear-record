@@ -4,9 +4,14 @@
   "description": "Flux as a data structure",
   "main": "lib/index.js",
   "scripts": {
+    "clean": "rm -rf lib coverage",
     "lint": "eslint .",
     "test": "./node_modules/mocha/bin/_mocha --reporter spec --compilers js:babel-register",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "build:lib": "./node_modules/.bin/babel ./src --out-dir ./lib",
+    "build": "npm run build:lib",
+    "prepublish": "npm run clean && npm run build",
+    "postpublish": "npm run clean"
   },
   "author": "Umut Sirin <umutsirin1@gmail.com>",
   "license": "MIT",
