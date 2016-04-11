@@ -19,7 +19,7 @@ const Counter = createRecord({
 const counter = Counter(new Reactor)
 
 // increment
-counter.actions.set(counter.getters.count() + 1)
+counter.actions.set('count', counter.getters.count() + 1)
 ```
 
 # install
